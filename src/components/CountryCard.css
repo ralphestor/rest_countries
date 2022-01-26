@@ -1,0 +1,62 @@
+.countryCard {
+    width: 250px;
+    font-family: 'Nunito Sans', sans-serif;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.countryCard:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5);
+}
+.cardImageContainer {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    border-radius: 5px 5px 0 0;
+}
+.cardImage {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+.cardTextContainer {
+    width: 200px;
+    margin: 20px auto;
+}
+.countryText {
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.detailTitle {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+}
+.detailValue {
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 650px) {
+    .countryCard {
+        width: 80%;
+    }
+    .cardImageContainer {
+        height: unset;
+    }
+    .cardImage {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 5px 5px 0 0;
+    }
+    .cardTextContainer {
+        width: 80%;
+    }
+}
