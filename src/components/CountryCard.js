@@ -1,7 +1,7 @@
 import './CountryCard.css'
 const CountryCard = props => {
     return ( 
-        <a href='#' className='countryCard'>
+        <a href='/' className='countryCard'>
             <div className="cardImageContainer">
                 <img className="cardImage" src={props.flag} alt={props.name}></img>
             </div>
