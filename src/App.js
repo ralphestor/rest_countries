@@ -1,44 +1,18 @@
-import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
-import CountryCard from './components/CountryCard';
-import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home'
 
 function App() {
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://restcountries.com/v2/all')
-      .then(res => {
-        setCountries(res.data)
-      })
-      .catch(e => {
-        console.log(e);
-      })
-  }, [])
-
-  console.log(countries)
-
-  const renderCountries = countries.map(country => {
-    return(
-      <CountryCard
-        key={country.alpha2Code}
-        name={country.name}
-        flag={country.flag}
-        population={country.population}
-        region={country.region}
-        capital={country.capital}
-    />
-    )
-
-  })
   return (
-    <div className="App">
-      <Navbar/>
-      <main className='cardsContainer'>
-        {renderCountries}
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path='/' exact element={<Home/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

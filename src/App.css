@@ -8,30 +8,3 @@ body {
   background-color: hsl(0, 0%, 98%);
 }
 
-.cardsContainer {
-  width: 1150px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  gap: 50px;
-  margin: 50px auto;
-}
-
-@media only screen and (max-width: 1250px) {
-  .cardsContainer {
-    width: 850px;
-  }
-}
-
-@media only screen and (max-width: 950px) {
-  .cardsContainer {
-    width: 550px;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .cardsContainer {
-    width: 100%;
-    justify-content: center;
-  }
-}
