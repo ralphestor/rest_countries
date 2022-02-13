@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CountryCard from './components/CountryCard';
 import axios from 'axios';
 import './Home.css';
