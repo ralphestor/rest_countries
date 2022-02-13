@@ -12,7 +12,7 @@
     width: 80%;
     list-style: none;
     display: flex;
-    gap: 30px 5px;
+    gap: 30px 3px;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
@@ -45,7 +45,7 @@
 }
 
 .disabledBtn a:hover {
-    cursor: default;
+    cursor: not-allowed;
     color: rgba(0, 0, 0, 0.4);
     background-color:#FFFFFF;
 }
