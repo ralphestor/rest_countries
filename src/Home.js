@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import CountryCard from './components/CountryCard';
 import axios from 'axios';
 import './Home.css';
@@ -10,11 +10,11 @@ const Home = () => {
     const [totalCountries, setTotalCountries] = useState(0);
     const [pageNumber, setPageNumber] = useState(0);
     const cardsPerPage = 20
-    const startNum = pageNumber * cardsPerPage;
-    const endNum = pageNumber * cardsPerPage + cardsPerPage;
     const pages = Math.ceil(totalCountries / cardsPerPage);
 
     useEffect(() => {
+      const startNum = pageNumber * cardsPerPage;
+      const endNum = pageNumber * cardsPerPage + cardsPerPage;
       axios.get('https://restcountries.com/v2/all')
         .then(res => {
           setTotalCountries(res.data.length)
@@ -24,8 +24,7 @@ const Home = () => {
           console.log(e);
         })
     }, [pageNumber])
-    console.log(totalCountries)
-    
+
     const renderCountries = countries.map(country => {
       return(
         <CountryCard
@@ -40,6 +39,10 @@ const Home = () => {
     })
 
     const changePage = ({selected}) => {
+      window.scrollTo({
+        top: 0, 
+        behavior: 'auto'
+      });
       setPageNumber(selected);
       console.log(pageNumber);
     }
